@@ -13,8 +13,11 @@ public class ClsUserServiceImpl implements IUserService {
 
   @Override
   public ClsUser opCreateUser(ClsUser prmUser) {
-    
+
     ClsUser objNewUser = new ClsUser();
+    if (prmUser.getAttUsername() == null || prmUser.getAttUsername().isBlank()) {
+      throw new IllegalArgumentException("Username is empty");
+    }
 
     objNewUser.setAttUsername(prmUser.getAttUsername());
     objNewUser.setAttEmail(prmUser.getAttEmail());
@@ -26,21 +29,41 @@ public class ClsUserServiceImpl implements IUserService {
   }
 
   @Override
-  public boolean opUpdateUser(ClsUser prmUserDTO, long prmId) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'opUpdateUser'");
+  public boolean opUpdateUser(ClsUser prmUser, long prmId) {
+    ClsUser varUser = objUserRepository.opGet(prmId);
+
+    if (varUser == null) {
+      return false;
+    }
+
+    prmUser.setAttId(varUser.getAttId());
+
+    objUserRepository.opUpdate(prmUser);
+
+    return true;
   }
 
   @Override
   public boolean opDeleteUser(long prmId) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'opDeleteUser'");
+    ClsUser user = objUserRepository.opGet(prmId);
+
+    if (user == null) {
+      return false;
+    }
+
+    objUserRepository.opDelete(user.getAttId());
+    return true;
   }
 
   @Override
   public ClsUser opGetUserById(long prmId) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'opGetUserById'");
+    ClsUser user = objUserRepository.opGet(prmId);
+
+    if (user == null) {
+      return null;
+    }
+
+    return user;
   }
 
 }
