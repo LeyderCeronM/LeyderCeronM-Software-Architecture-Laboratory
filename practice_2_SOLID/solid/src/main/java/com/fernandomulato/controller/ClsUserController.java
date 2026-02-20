@@ -22,7 +22,7 @@ public class ClsUserController {
     return objUserService.opDeleteUser(prmId);
   }
 
-  public ClsUser getUser(long prmId) {
+  public ClsUser getUserById(long prmId) {
     return objUserService.opGetUserById(prmId);
   }
 }

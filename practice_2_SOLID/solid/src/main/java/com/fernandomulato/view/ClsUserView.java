@@ -70,7 +70,7 @@ public class ClsUserView {
     long id = scanner.nextLong();
     scanner.nextLine();
 
-    ClsUser user = controller.getUser(id);
+    ClsUser user = controller.getUserById(id);
 
     if (user != null) {
       System.out.println("Username: " + user.getAttUsername());
