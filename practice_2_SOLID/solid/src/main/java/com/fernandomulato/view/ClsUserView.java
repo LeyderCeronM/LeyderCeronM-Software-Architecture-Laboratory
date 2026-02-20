@@ -23,7 +23,8 @@ public class ClsUserView {
       System.out.println("1. Create user");
       System.out.println("2. Get user");
       System.out.println("3. Delete user");
-      System.out.println("4. Exit");
+      System.out.println("4. Update user");
+      System.out.println("5. Exit");
       System.out.print("Choose option: ");
 
       int option = scanner.nextInt();
@@ -33,8 +34,9 @@ public class ClsUserView {
         case 1 -> createUser();
         case 2 -> getUser();
         case 3 -> deleteUser();
-        case 4 -> {
-          System.out.println("Bye 👋");
+        case 4 -> updateUser(); 
+        case 5 -> {
+          System.out.println("Bye...");
           return;
         }
         default -> System.out.println("Invalid option");
@@ -92,6 +94,40 @@ public class ClsUserView {
       System.out.println("User deleted");
     } else {
       System.out.println("User not found");
+    }
+  }
+
+  private void updateUser() {
+
+    System.out.print("User ID to update: ");
+    long id = scanner.nextLong();
+    scanner.nextLine();
+
+    // Verificamos si existe primero
+    ClsUser existingUser = controller.getUserById(id);
+
+    if (existingUser == null) {
+      System.out.println("User not found");
+      return;
+    }
+
+    System.out.print("New Username: ");
+    String username = scanner.nextLine();
+
+    System.out.print("New Email: ");
+    String email = scanner.nextLine();
+
+    System.out.print("New Password: ");
+    String password = scanner.nextLine();
+
+    ClsUser updatedUser = new ClsUser(username, email, password, existingUser.getAttRole());
+
+    boolean updated = controller.updateUser(updatedUser, id);
+
+    if (updated) {
+      System.out.println("User updated successfully");
+    } else {
+      System.out.println("Error updating user");
     }
   }
 }
