@@ -1,1 +1,11 @@
+com\fernandomulato\controller\ClsUserController.class
+com\fernandomulato\model\ClsUser.class
+com\fernandomulato\model\enumeration\Profession.class
+com\fernandomulato\service\IUserService.class
+com\fernandomulato\model\enumeration\Role.class
+com\fernandomulato\repository\ClsDatabaseConnection.class
+com\fernandomulato\repository\impl\ClsSQLiteUserRepository.class
+com\fernandomulato\repository\IUserRepository.class
+com\fernandomulato\service\impl\ClsUserServiceImpl.class
+com\fernandomulato\view\ClsUserView.class
 com\fernandomulato\App.class

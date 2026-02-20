@@ -1,13 +1,19 @@
 package com.fernandomulato;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+import com.fernandomulato.controller.ClsUserController;
+import com.fernandomulato.repository.impl.ClsSQLiteUserRepository;
+import com.fernandomulato.service.impl.ClsUserServiceImpl;
+import com.fernandomulato.view.ClsUserView;
+
+public class App {
+
+    public static void main(String[] args) {
+
+        var repository = new ClsSQLiteUserRepository();
+        var service = new ClsUserServiceImpl(repository);
+        var controller = new ClsUserController(service);
+        var view = new ClsUserView(controller);
+
+        view.start();
     }
 }

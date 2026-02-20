@@ -10,7 +10,7 @@ public class uTestDatabaseConnection {
 
   @Test
     void testShouldConnectToDatabase() throws Exception {
-        Connection conn = clsDatabaseConnection.connect();
+        Connection conn = ClsDatabaseConnection.connect();
         assertNotNull(conn);
         conn.close();
     }

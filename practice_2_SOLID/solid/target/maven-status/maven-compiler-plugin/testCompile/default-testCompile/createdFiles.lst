@@ -1,1 +1,3 @@
 com\fernandomulato\AppTest.class
+com\fernandomulato\repository\uTestDatabaseConnection.class
+com\fernandomulato\controller\uTestUserController.class
