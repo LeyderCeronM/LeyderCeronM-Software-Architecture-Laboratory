@@ -11,3 +11,5 @@
 ## Level 3 - Component Diagram
 
 ![Component Diagram](assets/component_diagram.png)
+
+**Authors:** Henry Fernando Mulato Llanten - Leider Ceron - Juan Jose Hurtado
