@@ -1,5 +1,7 @@
 **Authors:** Henry Fernando Mulato Llanten - Leider Ceron - Juan Jose Hurtado
 
+**Prototypes:** [Prototype Figma](https://www.figma.com/design/xuDc5jfUPLjyiSoS8VALcY/piedra-Azul?node-id=0-1&t=d9vzoc5Hh4b6WqfK-1)
+
 # Laboratory Workshop: Layered Architecture and MVC
 
 ## University Information
