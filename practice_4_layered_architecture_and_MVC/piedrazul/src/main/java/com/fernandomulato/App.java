@@ -25,7 +25,7 @@ public class App
             ClsMainFrame frame = new ClsMainFrame(controller, kernel);
             frame.setVisible(true);
 
-            System.out.println("Directorio de ejecución:");
+            System.out.println("Execution directory:");
             System.out.println(System.getProperty("user.dir"));
             System.out.println("user.dir = " + System.getProperty("user.dir"));
         });
