@@ -1,4 +1,4 @@
-package co.fernandomulato;
+package co.fernandomulato.plugin;
 
 import co.fernandomulato.entities.Delivery;
 import co.fernandomulato.entities.Product;

@@ -1,0 +1,40 @@
+package co.fernandomulato.plugin;
+
+import co.fernandomulato.entities.Delivery;
+import co.fernandomulato.entities.Product;
+import co.fernandomulato.interfaces.IDeliveryPlugin;
+
+/**
+ * Plugin para envios a Argentina
+ * 
+ * @author Fernando Mulato
+ */
+public class ArgentinaDeliveryPlugin implements IDeliveryPlugin {
+
+  /**
+   * Calcular el costo de envío de un producto de la tienda enviado dentro de
+   * Argentina.
+   *
+   */
+  @Override
+  public double calculateCost(Delivery delivery) {
+
+    Product product = delivery.getProduct();
+
+    double cost;
+
+    // El peso del producto determina el costo.
+    if (product.getWeight() <= 2) {
+
+      cost = 5;
+
+    } else {
+
+      // El peso adicional después de 2 kg se cobra a 0.5 por kilo.
+      cost = 5 + (product.getWeight() - 2) * 0.5;
+
+    }
+
+    return cost;
+  }
+}
