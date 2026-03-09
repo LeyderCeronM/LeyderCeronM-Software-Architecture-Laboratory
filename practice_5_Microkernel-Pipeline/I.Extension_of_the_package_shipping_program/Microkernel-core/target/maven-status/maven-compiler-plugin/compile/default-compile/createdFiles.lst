@@ -1,0 +1,5 @@
+co\fernandomulato\plugin\manager\DeliveryPluginManager.class
+co\fernandomulato\business\DeliveryService.class
+co\fernandomulato\business\ProductService.class
+co\fernandomulato\presentation\Console.class
+co\fernandomulato\app\Application.class
