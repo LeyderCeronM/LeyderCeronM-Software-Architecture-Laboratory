@@ -1,0 +1,5 @@
+com\fernandomulato\business\AppointmentService.class
+com\fernandomulato\pipeline\IPipelineStage.class
+com\fernandomulato\plugin\manager\ReportPluginManager.class
+com\fernandomulato\presentation\Console.class
+com\fernandomulato\app\Application.class
