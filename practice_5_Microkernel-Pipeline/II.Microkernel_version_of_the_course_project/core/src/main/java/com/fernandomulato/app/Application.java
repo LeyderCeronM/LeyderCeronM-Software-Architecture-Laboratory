@@ -3,6 +3,7 @@ package com.fernandomulato.app;
 import com.fernandomulato.presentation.Console;
 
 import java.io.File;
+
 import java.net.URLDecoder;
 import java.util.logging.Level;
 import java.util.logging.Logger;

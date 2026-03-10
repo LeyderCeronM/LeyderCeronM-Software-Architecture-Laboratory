@@ -17,7 +17,7 @@ public class ReportHtmlPlugin implements IReportPlugin {
 
     StringBuilder html = new StringBuilder();
 
-    html.append("<!DOCTYPE html>");
+    html.append("<!DOCTYPE html>\n");
     html.append("<html lang=\"es\">\n");
     html.append("  <head>\n");
     html.append("    <title>Reporte de Citas</title>\n");
