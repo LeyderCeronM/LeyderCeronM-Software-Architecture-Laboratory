@@ -12,27 +12,33 @@ import com.fernando_mulato_leider_ceron.entities.Appointment;
  *
  */
 public class App {
-  public static void main(String[] args) {
-    AppointmentDirector appointmentDirector = new AppointmentDirector();
+	public static void main(String[] args) {
+		AppointmentDirector appointmentDirector = new AppointmentDirector();
+		// Construir una cita manualmente
+		System.out.println("---------------------------------------");
 		AppointmentBuilder manual_AppointmentBuilder = new ManualAppointmentBuilder();
 		appointmentDirector.setAppointmentBuilder(manual_AppointmentBuilder);
 		appointmentDirector.buildAppointment();
 
 		Appointment appointment = appointmentDirector.getAppointment();
-		System.out.println("Cita:" + appointment);
-		
+		System.out.println("Cita Manual :" + appointment);
+
+		// Construir una cita por autoservicio
+		System.out.println("---------------------------------------");
 		AppointmentBuilder selfService_AppointmentBuilder = new SelfServiceAppointmentBuilder();
 		appointmentDirector.setAppointmentBuilder(selfService_AppointmentBuilder);
 		appointmentDirector.buildAppointment();
 
 		appointment = appointmentDirector.getAppointment();
-		System.out.println("Cita:" + appointment);
-
-    AppointmentBuilder reschuled_AppointmentBuilder = new RescheduledAppointmentBuilder();
+		System.out.println("Cita por Autoservicio  :" + appointment);
+		
+		// Construir una cita reagendada
+		System.out.println("---------------------------------------");
+		AppointmentBuilder reschuled_AppointmentBuilder = new RescheduledAppointmentBuilder();
 		appointmentDirector.setAppointmentBuilder(reschuled_AppointmentBuilder);
 		appointmentDirector.buildAppointment();
 
 		appointment = appointmentDirector.getAppointment();
-		System.out.println("Cita:" + appointment);
-  }
+		System.out.println("Cita Reagendada :" + appointment);
+	}
 }

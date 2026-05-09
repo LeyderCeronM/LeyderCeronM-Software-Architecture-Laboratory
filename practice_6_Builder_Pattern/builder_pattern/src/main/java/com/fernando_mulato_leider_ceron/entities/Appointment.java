@@ -30,4 +30,5 @@ public class Appointment {
   protected void onUpdate() {
     updatedAt = LocalDateTime.now();
   }
-}
+  
+} 
