@@ -14,31 +14,27 @@ import com.fernando_mulato_leider_ceron.entities.Appointment;
 public class App {
 	public static void main(String[] args) {
 		AppointmentDirector appointmentDirector = new AppointmentDirector();
-		// Construir una cita manualmente
-		System.out.println("---------------------------------------");
-		AppointmentBuilder manual_AppointmentBuilder = new ManualAppointmentBuilder();
-		appointmentDirector.setAppointmentBuilder(manual_AppointmentBuilder);
-		appointmentDirector.buildAppointment();
 
-		Appointment appointment = appointmentDirector.getAppointment();
-		System.out.println("Cita Manual :" + appointment);
+		// Construir una cita manualmente
+		Appointment manualAppointment = appointmentDirector.buildManualAppointment();
+        System.out.println("\n---------------------------------------");
+        System.out.println("           CITA MANUAL");
+        System.out.println("---------------------------------------");
+        System.out.println(manualAppointment);
 
 		// Construir una cita por autoservicio
-		System.out.println("---------------------------------------");
-		AppointmentBuilder selfService_AppointmentBuilder = new SelfServiceAppointmentBuilder();
-		appointmentDirector.setAppointmentBuilder(selfService_AppointmentBuilder);
-		appointmentDirector.buildAppointment();
+		Appointment selfServiceAppointment = appointmentDirector.buildSelfServiceAppointment();
+        System.out.println("\n---------------------------------------");
+        System.out.println("      CITA POR AUTOSERVICIO");
+        System.out.println("---------------------------------------");
+        System.out.println(selfServiceAppointment);
 
-		appointment = appointmentDirector.getAppointment();
-		System.out.println("Cita por Autoservicio  :" + appointment);
-		
 		// Construir una cita reagendada
+		System.out.println("\n---------------------------------------");
+		System.out.println("         CITA REAGENDADA");
 		System.out.println("---------------------------------------");
-		AppointmentBuilder reschuled_AppointmentBuilder = new RescheduledAppointmentBuilder();
-		appointmentDirector.setAppointmentBuilder(reschuled_AppointmentBuilder);
-		appointmentDirector.buildAppointment();
-
-		appointment = appointmentDirector.getAppointment();
-		System.out.println("Cita Reagendada :" + appointment);
+		Appointment rescheduledAppointment = appointmentDirector.buildRescheduledAppointment();
+		System.out.println(rescheduledAppointment);
+	
 	}
 }

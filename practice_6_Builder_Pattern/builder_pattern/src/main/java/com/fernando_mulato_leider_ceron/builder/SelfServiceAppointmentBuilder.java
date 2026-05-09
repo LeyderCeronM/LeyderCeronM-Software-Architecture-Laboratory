@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class SelfServiceAppointmentBuilder extends AppointmentBuilder {
-
+    // implementamos builders concretos, punto 3 de la guia
    @Override
     public void buildPatientData() {
         appointment.setId(2l);

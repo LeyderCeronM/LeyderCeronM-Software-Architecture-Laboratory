@@ -3,22 +3,41 @@ package com.fernando_mulato_leider_ceron.builder;
 import com.fernando_mulato_leider_ceron.entities.Appointment;
 
 public class AppointmentDirector {
-  private AppointmentBuilder appointmentBuilder;
+	//cumple  el punto 4 de la guia director, el cual se encarga de construir los objetos utilizando los builders concretos
+	public Appointment buildManualAppointment() {
+		
+        AppointmentBuilder builder = new ManualAppointmentBuilder();
 
-	public void setAppointmentBuilder(AppointmentBuilder appointmentBuilder) {
-		this.appointmentBuilder = appointmentBuilder;
-	}
+        builder.createNewAppointment();
+        builder.buildPatientData();
+        builder.buildProfessionalData();
+        builder.buildData();
+        builder.buildAppointmentType();
+        return builder.getAppointment();
+    }
 
-	public Appointment getAppointment() {
-		return appointmentBuilder.getAppointment();
-	}
+    public Appointment buildSelfServiceAppointment() {
 
-	public void buildAppointment() {
-		appointmentBuilder.createNewAppointment();
-		appointmentBuilder.buildPatientData();
-		appointmentBuilder.buildProfessionalData();
-		appointmentBuilder.buildData();
-		appointmentBuilder.buildAppointmentType();
-	}
+        AppointmentBuilder builder = new SelfServiceAppointmentBuilder();
+
+        builder.createNewAppointment();
+        builder.buildPatientData();
+        builder.buildProfessionalData();
+        builder.buildData();
+        builder.buildAppointmentType();
+        return builder.getAppointment();
+    }
+
+    public Appointment buildRescheduledAppointment() {
+
+        AppointmentBuilder builder = new RescheduledAppointmentBuilder();
+
+        builder.createNewAppointment();
+        builder.buildPatientData();
+        builder.buildProfessionalData();
+        builder.buildData();
+        builder.buildAppointmentType();
+        return builder.getAppointment();
+    }
 }
 

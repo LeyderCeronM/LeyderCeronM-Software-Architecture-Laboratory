@@ -8,7 +8,7 @@ import lombok.Data;
 
 @Data
 public class Appointment {
-  
+  // cumple el punto 1 de la guia
   private Long id;
   private String patientDocument;
   private String patientName;
