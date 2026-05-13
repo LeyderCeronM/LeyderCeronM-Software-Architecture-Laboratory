@@ -34,6 +34,16 @@ class AppointmentDirector <<Builder>> #LightYellow;line:Black {
   +buildAppointment(): void
 }
 
+class AppointmentBuilder <<Builder>> #LightYellow;line:Black {
+  - Appointment : Appointment
+  + getAppointment(): void
+  + createNewAppointment(): void
+  {abstract} + buildPatientData(): void
+  {abstract} + buildProfessionalData(): void
+  {abstract} + buildData(): void
+  {abstract} + buildAppointmentType(): void
+}
+
 ' User "1" --> "1" UserRole : "has"
 ' User "1" --> "1" UserStatus : "has"
 
